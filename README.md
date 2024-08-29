@@ -69,11 +69,11 @@ Cada aula estará em uma branch exemplo:
 
 - aula 03: Adicionando validações ao nosso teste na branch `aula03-validacoes`
 
-- aula 04: Utilizando os commands para criar funções "cypress" na branch `aula03-Commands`
+- aula 04: Utilizando os commands e adicionando dados de arquivos externos para criar funções "cypress" na branch `aula04-Commands`
 
-- aula 05: Adicionando report aos testes na branch `aula04-Report`
+- aula 05: Adicionando report aos testes na branch `aula05-Report`
 
-- aula 06: Adicionando os testes em pipeline na branch `aula05-Pipeline`
+- aula 06: Adicionando os testes em pipeline na branch `aula06-Pipeline`
 
 
 E a branch `main` ficará o código completo e final do projeto para você ter o gabarito
