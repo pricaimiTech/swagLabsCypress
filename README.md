@@ -18,6 +18,7 @@ DADO que me encontro no site
 E adiciono standard_user 
 E a senha secret_sauce
 QUANDO clico em logar
+ENTÃO logo na aplicação com sucesso
 ```
 
 - Produto 
@@ -62,6 +63,17 @@ ENTÃO sou redirecionada para a tela de Finalizar o Pedido
 
 Cada aula estará em uma branch exemplo:
 
-- aula Cypress Studio: branch `aula01-cypreStudio`
+- aula 01: Primeiros passos no mapeamento de elementos com Cypress Studio na branch `aula01-cypreStudio`
+
+- aula 02: Convertendo o código do Cypress Studio para Page Objects na branch `aula02-PageObjects`
+
+- aula 03: Adicionando validações ao nosso teste na branch `aula03-validacoes`
+
+- aula 04: Utilizando os commands para criar funções "cypress" na branch `aula03-Commands`
+
+- aula 05: Adicionando report aos testes na branch `aula04-Report`
+
+- aula 06: Adicionando os testes em pipeline na branch `aula05-Pipeline`
+
 
 E a branch `main` ficará o código completo e final do projeto para você ter o gabarito
