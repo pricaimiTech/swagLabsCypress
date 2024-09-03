@@ -23,3 +23,33 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import LoginPage from "../support/pageObjects/Login.page";
+import HomePage from "../support/pageObjects/Home.page";
+import ProdutoPage from "../support/pageObjects/Produto.page";
+import CarrinhoPage from "./pageObjects/Carrinho.page";
+
+Cypress.Commands.add('Login', () => {
+    cy.visit('/')
+    LoginPage.signIn()
+    HomePage.checkIsLogado()
+})
+
+/**
+ * @description Como Cypress é baseado em promessas e comandos encadeados, usamos cy.wrap(null) para criar uma nova cadeia de comandos que permite capturar o valor retornado e utilizá-lo em outros testes.
+ * isso irá salvar o nome do produto para validar depois
+ */
+
+Cypress.Commands.add('AddProduct', () => {
+    cy.wrap(null).then(() => {
+        return ProdutoPage.takeProductName()
+    }).then((productName) => {
+        ProdutoPage.escolherProduto()
+        CarrinhoPage.addProduct()
+        CarrinhoPage.btnAcessarCarrinho()
+        /**
+         * @description Pega o primeiro item da lista de produtos do carrinho e valida com o produto escolhido
+         */
+        CarrinhoPage.checkProductName(productName)
+    })
+})
