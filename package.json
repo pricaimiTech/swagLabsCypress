@@ -1,0 +1,14 @@
+{
+  "name": "swagLabsCypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pricaimiTech/swagLabsCypress.git",
+  "author": "Priscila Caimi <priscila.caimi@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^13.14.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open"
+  }
+}
