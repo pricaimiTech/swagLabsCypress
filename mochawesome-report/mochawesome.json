@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-03T18:36:36.613Z",
+    "end": "2024-09-03T18:36:41.418Z",
+    "duration": 4805,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7ab92090-9517-48ad-a399-da3332c3ff65",
+      "title": "",
+      "fullFile": "cypress\\e2e\\aula04\\E2ESwagLabs.cy.js",
+      "file": "cypress\\e2e\\aula04\\E2ESwagLabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9a94f2ff-a552-47e6-82a3-d750765b0a19",
+          "title": "E2E Shop Swag Labs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "E escolho um produto \nQUANDO clico em Finish \nENTÃO sou redirecionada para a tela de Finalizar o Pedido",
+              "fullTitle": "E2E Shop Swag Labs E escolho um produto \nQUANDO clico em Finish \nENTÃO sou redirecionada para a tela de Finalizar o Pedido",
+              "timedOut": null,
+              "duration": 3346,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.AddProduct();\n_Carrinho.default.btnGoCheckout();\n_Checkout.default.formularioCheckout();\n_Checkout.default.checkPage(\"Checkout: Overview\");\n_Overview.default.finishPedido();\n_Checkout.default.checkFinishOrder(\"Thank you for your order!\");",
+              "err": {},
+              "uuid": "ad23176a-d495-44fa-98e2-e80f0dd642e7",
+              "parentUUID": "9a94f2ff-a552-47e6-82a3-d750765b0a19",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ad23176a-d495-44fa-98e2-e80f0dd642e7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3346,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+          "quite": true,
+          "overwrite": false,
+          "html": false,
+          "json": true
+        }
+      },
+      "version": "6.2.0"
+    }
+  }
+}

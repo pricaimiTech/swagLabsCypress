@@ -6,11 +6,20 @@
   "author": "Priscila Caimi <priscila.caimi@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^13.14.0"
+    "cypress": "^13.14.0",
+    "cypress-multi-reporters": "^1.6.4",
+    "mocha": "^10.7.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:E2E": "cypress run --spec cypress/e2e/aula04/E2ESwagLabs.cy.js"
+    "cy:run:E2E": "cypress run --spec cypress/e2e/aula04/E2ESwagLabs.cy.js --reporter mochawesome",
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report"
   }
 }

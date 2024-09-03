@@ -77,3 +77,63 @@ Cada aula estará em uma branch exemplo:
 
 
 E a branch `main` ficará o código completo e final do projeto para você ter o gabarito
+
+### Report 
+
+**Tutorial para configuar** 
+
+```cmd
+yarn add mocha --save-dev
+```
+
+```cmd
+yarn add cypress-multi-reporters --save-dev
+```
+
+```cmd
+yarn add mochawesome --save-dev
+```
+
+```cmd
+yarn add mochawesome-merge --save-dev
+```
+
+```cmd
+yarn add mochawesome-report-generator --save-dev
+```
+
+_No arquivo cypress.config.js 
+
+```js
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+  chromeWebSecurity: false, // add this line
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    experimentalStudio: true,
+    baseUrl: 'http://www.saucedemo.com',
+    reporterOptions: {
+      reporterEnabled: 'mochawesome',
+      mochawesomeReporterOptions: {
+        quite: true,
+        overwrite: false,
+        html: false,
+        json: true
+      }
+    }
+  },
+
+});
+```
+
+_Adicionado os comandos no script_ 
+```json
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report"
+```
+    
