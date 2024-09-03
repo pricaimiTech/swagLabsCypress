@@ -16,7 +16,9 @@ describe('Validar tela de checkout', () => {
 
     it('QUANDO estou na tela de Checkout \nENTÃO o formulario de dados do usuário deve ser exibido', () => {
         CarrinhoPage.btnGoCheckout()
+        CheckoutPage.checkPage("Checkout: Your Information")
         CheckoutPage.formularioCheckout()
+        CheckoutPage.checkPage("Checkout: Overview")
     });
 
 });

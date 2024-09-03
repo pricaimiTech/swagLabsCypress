@@ -3,3 +3,7 @@ export const carrinho ={
     btnCarrinho: '[data-test="shopping-cart-link"]',
     bntCheckout: '[data-test="checkout"]'
 }
+
+export const productCarrinhoList = {
+    productListName: 'div[class="inventory_item_name"]'
+}

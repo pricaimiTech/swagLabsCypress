@@ -1,5 +1,4 @@
 import LoginPage from "../../support/pageObjects/Login.page";
-import ProdutoPage from "../../support/pageObjects/Produto.page";
 import CarrinhoPage from "../../support/pageObjects/Carrinho.page";
 
 describe('Validar carrinho', () => {
@@ -11,9 +10,11 @@ describe('Validar carrinho', () => {
 
 
     it('QUANDO adiciono um produto ao carrinho \nENTÃO os produtos adicionados ao carrinho devem ser exibidos', () => {
-        ProdutoPage.escolherProduto()
-        CarrinhoPage.addProduct()
-        CarrinhoPage.btnAcessarCarrinho()
+        /**
+         * @description Como Cypress é baseado em promessas e comandos encadeados, usamos cy.wrap(null) para criar uma nova cadeia de comandos que permite capturar o valor retornado e utilizá-lo em outros testes.
+         * isso irá salvar o nome do produto para validar depois
+         */
+        CarrinhoPage.addAndCheckProduct()
     });
 
 });

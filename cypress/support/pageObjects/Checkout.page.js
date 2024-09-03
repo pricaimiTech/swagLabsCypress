@@ -1,4 +1,5 @@
-import { formCheckout } from "../elements/Checkout";
+
+import { formCheckout,  finishOrder} from "../elements/Checkout";
 
 class CheckoutPage{
 
@@ -7,6 +8,14 @@ class CheckoutPage{
         cy.get(formCheckout.inputLastName).type('Caimi');
         cy.get(formCheckout.inputPostalCode).type('123456');
         cy.get(formCheckout.btnContinueCheckout).click();
+    }
+
+    checkPage(titulo){
+        cy.get(formCheckout.labelTituto).contains(titulo)
+    }
+
+    checkFinishOrder(message){
+        cy.get(finishOrder.labelThankOrder).contains(message)
     }
 }
 
