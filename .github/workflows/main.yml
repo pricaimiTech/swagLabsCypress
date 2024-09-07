@@ -10,3 +10,12 @@ jobs:
         with:
           browser: chrome
           spec: cypress/e2e/aula04/E2ESwagLabs.cy.js
+          
+  chrome-allTests:
+    runs-on: ubuntu-22.04
+    name: All Test on Chrome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
